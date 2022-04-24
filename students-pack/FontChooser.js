@@ -27,14 +27,11 @@ class FontChooser extends React.Component {
 		if(this.props.min<=0){
 			this.min=1
 		}
-		if(this.props.min>this.props.max){
-			this.max=400000000
-			this.Size=this.props.min
-			textSpan.style.fontSize = this.Size + "px"
-			fontSizeSpan.innerText = this.Size;
-			textSpan.style.color = "red"
-		}
-		if(this.props.size<this.props.min){
+
+		if(parseInt(this.props.size)<parseInt(this.props.min)){
+			console.log(this.props.size)
+			console.log(this.props.min)
+			console.log(this.props.size<this.props.min)
 			this.Size=this.min
 			textSpan.style.fontSize = this.Size + "px"
 			fontSizeSpan.innerText = this.Size;
@@ -43,6 +40,14 @@ class FontChooser extends React.Component {
 
 		if(this.props.size>this.props.max){
 			this.Size=this.max
+			textSpan.style.fontSize = this.Size + "px"
+			fontSizeSpan.innerText = this.Size;
+			textSpan.style.color = "red"
+		}
+
+		if(this.props.min>this.props.max){
+			this.max=400000000
+			this.Size=this.props.min
 			textSpan.style.fontSize = this.Size + "px"
 			fontSizeSpan.innerText = this.Size;
 			textSpan.style.color = "red"
@@ -131,6 +136,7 @@ class FontChooser extends React.Component {
 
 	render() {
 		function declare() {
+			//Do i need to do this or just use the id directly?
 			let boldCheckbox = document.getElementById("boldCheckbox");
 			let decreaseButton = document.getElementById("decreaseButton");
 			let fontSizeSpan = document.getElementById("fontSizeSpan");
