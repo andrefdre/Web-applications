@@ -46,7 +46,7 @@ class FontChooser extends React.Component {
 		}
 
 		if(this.props.min>this.props.max){
-			this.max=400000000
+			this.max=this.min
 			this.Size=this.props.min
 			textSpan.style.fontSize = this.Size + "px"
 			fontSizeSpan.innerText = this.Size;
