@@ -22,8 +22,10 @@ class FontChooser extends React.Component {
 		else if (this.props.bold == 'false') {
 			textSpan.style.fontWeight = "normal";
 		}
+		textSpan.style.fontSize = this.Size + "px"
+			fontSizeSpan.innerText = this.Size;
 		console.log(this.default_bold)
-
+		console.log(this.Size);
 		if(this.props.min<=0){
 			this.min=1
 		}
